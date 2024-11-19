@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".splash2"
+    android:background="#C8FFFFFF">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/st1"
+        android:background="@color/black"
+
+        />
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:id="@+id/ma1"
+        android:layout_height="600dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#000000"
+        app:cardCornerRadius="400dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="@color/black"
+        tools:layout_editor_absoluteX="-16dp">
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:id="@+id/mtext1"
+           android:text="ThoughtForge"
+           android:textColor="#B6B4B4"
+           android:textSize="40dp"
+           app:layout_constraintTop_toTopOf="parent"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintBottom_toBottomOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           android:layout_marginBottom="70dp"
+           />
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="Daily New Thoughts and Words to Learn."
+           android:textColor="#979793"
+           android:textSize="15dp"
+           app:layout_constraintTop_toBottomOf="@+id/mtext1"
+           app:layout_constraintStart_toStartOf="@+id/mtext1"
+           app:layout_constraintEnd_toEndOf="@+id/mtext1"
+           />
+   </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <Button
+        android:id="@+id/sb1"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#B4333232"
+        android:text="Login"
+        android:textColor="@color/white"
+        app:layout_constraintHorizontal_bias="0.229"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ma1" />
+
+    <Button
+        android:id="@+id/sb2"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="64dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="88dp"
+        android:backgroundTint="#A92F2D2F"
+        android:text="Register"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/sb1"
+        app:layout_constraintTop_toBottomOf="@id/ma1" />
+</androidx.constraintlayout.widget.ConstraintLayout>

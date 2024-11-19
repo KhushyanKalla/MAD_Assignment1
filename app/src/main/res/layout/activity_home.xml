@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".home"
+    android:background="@color/black">
+
+    <!-- Title TextView -->
+    <TextView
+        android:id="@+id/t1"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-black"
+        android:text="ThoughtForge"
+        android:textColor="#FFFFFF"
+        android:textSize="40dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Outer Material Card (White Background) -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/main_card"
+        android:layout_width="match_parent"
+        android:layout_height="640dp"
+        app:layout_constraintTop_toBottomOf="@id/t1"
+        android:layout_marginTop="20dp"
+        app:cardCornerRadius="20dp"
+        android:backgroundTint="#80FFFFFF">
+
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:layout_marginStart="10dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                >
+
+                <!-- Thought Card -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/thought_card"
+                    android:layout_width="350dp"
+                    android:layout_height="550dp"
+                    android:backgroundTint="#BE00ED"
+                    app:cardCornerRadius="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+
+                   >
+
+                    <TextView
+                        android:id="@+id/tv_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Today's Thought"
+                        android:textColor="#FFFFFF"
+                        android:textSize="40dp"
+                        android:layout_marginStart="35dp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="50dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <!-- Content TextView -->
+                    <TextView
+                        android:id="@+id/tv_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="150dp"
+                        android:fontFamily="sans-serif"
+                        android:text="Believe in yourself and all that you are. Know that there is something inside you that is greater than any obstacle.\n\n– Christian D. Larson"
+                        android:textColor="#2A1A1A"
+                        android:textSize="25dp"
+                        android:layout_marginStart="40dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_title" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Word of the Day Card -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/word_card"
+                    android:layout_width="350dp"
+                    android:layout_height="550dp"
+                    android:backgroundTint="#EF4106"
+                    app:cardCornerRadius="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/thought_card">
+
+                    <TextView
+                        android:id="@+id/wr_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Today's Word"
+                        android:textColor="#FFFFFF"
+                        android:textSize="40dp"
+                        android:layout_marginStart="35dp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="50dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <!-- Content TextView -->
+                    <TextView
+                        android:id="@+id/wr_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="150dp"
+                        android:fontFamily="sans-serif"
+                        android:text="Serendipity (noun)\n\nMeaning: A fortunate accident; the ability to make pleasant discoveries by chance, often when you're not even looking for them."
+                        android:textColor="#FBFBFB"
+                        android:textSize="25dp"
+                        android:layout_marginStart="40dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </HorizontalScrollView>
+    </com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
