@@ -12,7 +12,6 @@
         android:layout_height="200dp"
         android:id="@+id/st1"
         android:background="@color/black"
-
         tools:ignore="MissingConstraints" />
 
     <com.google.android.material.card.MaterialCardView
@@ -44,9 +43,9 @@
        <TextView
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-           android:text="Daily New Thoughts and Words to Learn."
+           android:text="Daily New Thoughts and Words to Learn"
            android:textColor="#979793"
-           android:textSize="15dp"
+           android:textSize="15sp"
            app:layout_constraintTop_toBottomOf="@+id/mtext1"
            app:layout_constraintStart_toStartOf="@+id/mtext1"
            app:layout_constraintEnd_toEndOf="@+id/mtext1"
