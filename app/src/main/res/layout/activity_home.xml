@@ -31,7 +31,7 @@
         app:layout_constraintTop_toBottomOf="@id/t1"
         android:layout_marginTop="20dp"
         app:cardCornerRadius="20dp"
-        android:backgroundTint="#80FFFFFF">
+        android:backgroundTint="#80262525">
 
 
         <HorizontalScrollView
@@ -45,7 +45,6 @@
                 android:layout_height="match_parent"
                 >
 
-                <!-- Thought Card -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/thought_card"
                     android:layout_width="350dp"
@@ -54,8 +53,9 @@
                     app:cardCornerRadius="20dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-
-                   >
+                    android:layout_marginStart="1dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    >
 
                     <TextView
                         android:id="@+id/tv_title"

@@ -136,7 +136,7 @@
                 android:layout_marginTop="12dp"
                 android:background="@drawable/shapedbox"
                 android:hint="Enter Your Password"
-                android:inputType="textPersonName"
+                android:inputType="textPassword"
                 android:padding="10dp"
                 android:textColorHint="#68686A"
                 app:layout_constraintEnd_toEndOf="parent"

@@ -26,7 +26,6 @@
         android:id="@+id/n1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:text="Crafted by Khushyan Kalla"
         android:textSize="15sp"
         android:textColor="#928888"

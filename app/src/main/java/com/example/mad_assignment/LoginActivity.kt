@@ -2,56 +2,50 @@ package com.example.mad_assignment
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.google.firebase.auth.FirebaseAuth
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_login)
-        //firebase intializing
-        auth =FirebaseAuth.getInstance()
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
 
-        var guestButton = findViewById<Button>(R.id.sign)
+        // Initialize FirebaseAuth
+        auth = FirebaseAuth.getInstance()
+
         val etEmail = findViewById<EditText>(R.id.etemail)
         val etPassword = findViewById<EditText>(R.id.etPassword)
         val btnLogin = findViewById<Button>(R.id.btnLogin)
 
+        // Login button click listener
         btnLogin.setOnClickListener {
             val email = etEmail.text.toString().trim()
             val password = etPassword.text.toString().trim()
 
+            // Validation
             if (email.isEmpty() || password.isEmpty()) {
-                Toast.makeText(this, "Please fill in both Email and Password!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Please fill all fields!", Toast.LENGTH_SHORT).show()
             } else {
-                // Proceed to Home Activity
-                val intent = Intent(this, home::class.java)
-                startActivity(intent)
-                Toast.makeText(this, "Login Successful!,Welcome To Our App", Toast.LENGTH_SHORT).show()
-                finish()
+                // Login user with Firebase
+                auth.signInWithEmailAndPassword(email, password)
+                    .addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            // Navigate to HomeActivity
+                            val intent = Intent(this, home::class.java)
+                            startActivity(intent)
+                            finish()
+                            Toast.makeText(this, "Login successful!", Toast.LENGTH_SHORT).show()
+                        } else {
+                            // Display error message if login fails
+                            Toast.makeText(this, "Login failed: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
+                        }
+                    }
             }
         }
-        guestButton.setOnClickListener{
-            val intent = Intent(this, home::class.java)
-            Toast.makeText(this, "Welcome To Our App As a Guest", Toast.LENGTH_SHORT).show()
-            startActivity(intent)
-            finish()
-        }
-
     }
-
 }
